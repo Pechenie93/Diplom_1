@@ -9,11 +9,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 public class IngredientTypeTest {
     @Test
     public void fillingTest() {
-        assertThat(IngredientType.FILLING, is(notNullValue()));
+        assertThat(IngredientType.FILLING, is(IngredientType.FILLING));
     }
 
     @Test
     public void sauceTest() {
-        assertThat(IngredientType.SAUCE, is(notNullValue()));
+        assertThat(IngredientType.SAUCE, is(IngredientType.SAUCE));
     }
 }
