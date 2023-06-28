@@ -22,6 +22,6 @@ public class IngredientTest {
 
     @Test
     public void getPriceTest() {
-        assertEquals(ingredient.getPrice(), 100, 1);
+        assertEquals(ingredient.getPrice(), 100, 0.1);
     }
 }

@@ -13,6 +13,6 @@ public class BunTest {
 
     @Test
     public void getPriseTest() {
-        assertEquals(100, bun.getPrice(), 1);
+        assertEquals(100, bun.getPrice(), 0.1);
     }
 }
