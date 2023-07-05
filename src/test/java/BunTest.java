@@ -27,11 +27,13 @@ public class BunTest {
 
     @Test
     public void getNameTest() {
-        assertEquals(bun.getName(), bun.getName());
+        String expectedName = bun.getName();
+        assertEquals(expectedName, bun.getName());
     }
-
+// *
     @Test
     public void getPriseTest() {
-        assertEquals(bun.getPrice(), bun.getPrice(), 0.1);
+        int expectedPrice = (int) bun.getPrice();
+        assertEquals(expectedPrice, bun.getPrice(), 0.001);
     }
 }
