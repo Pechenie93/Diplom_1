@@ -22,6 +22,8 @@ public class BunTest {
                 {new Bun("black bun", 100)},
                 {new Bun("white bun", 200)},
                 {new Bun("white bun", 10)},
+                {new Bun("white-black bun", 1)},
+                {new Bun("white bun", 0)},
         });
     }
 
@@ -32,7 +34,7 @@ public class BunTest {
     }
 // *
     @Test
-    public void getPriseTest() {
+    public void getPriceTest() {
         int expectedPrice = (int) bun.getPrice();
         assertEquals(expectedPrice, bun.getPrice(), 0.001);
     }
