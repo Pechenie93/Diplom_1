@@ -10,36 +10,33 @@ import static org.junit.Assert.assertEquals;
 
 @RunWith(Parameterized.class)
 public class BunTest {
-    private final Bun bun;
+    private final String name;
+    private final float price;
 
-    public BunTest(Bun bun) {
-        this.bun = bun;
+    public BunTest(String name, float price) {
+        this.name = name;
+        this.price = price;
     }
 
     @Parameterized.Parameters
     public static Collection<Object[]> testData() {
         return Arrays.asList(new Object[][]{
-                {new Bun("black bun", 100)},             // Valid data - black bun with price 100
-                {new Bun("white bun", 200)},             // Valid data - white bun with price 200
-                {new Bun("white bun", 10)},              // Valid data - white bun with price 10
-                {new Bun("white-black bun", 1)},         // Valid data - white-black bun with price 1
-                {new Bun("white bun", 0)},               // Valid data - white bun with price 0
-                {new Bun(null, 100)},                     // Invalid data - null name with price 100
-                {new Bun("black bun", -50)},              // Invalid data - black bun with negative price
-                {new Bun("", 200)},                       // Invalid data - empty name with price 200
-                {new Bun("white bun", 1000000)},          // Invalid data - white bun with a very high price
+                {"black bun", 100f},             // Valid data - black bun with price 100
+                {"white bun", 200f},             // Valid data - white bun with price 200
+                {"white bun", 10f},              // Valid data - white bun with price 10
+                {"white-black bun", 1f},         // Valid data - white-black bun with price 1
+                {"white bun", 0f},               // Valid data - white bun with price 0
+                {null, 100f},                     // Invalid data - null name with price 100
+                {"black bun", -50f},              // Invalid data - black bun with negative price
+                {"", 200f},                       // Invalid data - empty name with price 200
+                {"white bun", 1000000f},          // Invalid data - white bun with a very high price
         });
     }
 
     @Test
-    public void getNameTest() {
-        String expectedName = bun.getName();
-        assertEquals(expectedName, bun.getName());
-    }
-// *
-    @Test
-    public void getPriceTest() {
-        int expectedPrice = (int) bun.getPrice();
-        assertEquals(expectedPrice, bun.getPrice(), 0.001);
+    public void returnActualNameAndPrice() {
+        Bun bun = new Bun(name, price);
+        assertEquals(name, bun.getName());
+        assertEquals(price, bun.getPrice(), 0);
     }
 }
